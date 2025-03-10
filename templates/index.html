@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="expression" readonly>
+            <div id="result"></div>
+        </div>
+        <div class="mode-toggle">
+            <button onclick="toggleMode()" id="modeToggle">Scientific Mode</button>
+            <button onclick="toggleAngleUnit()" id="angleUnitToggle">DEG</button>
+        </div>
+        <div class="memory-buttons">
+            <button class="memory" onclick="memoryStore()">MS</button>
+            <button class="memory" onclick="memoryRecall()">MR</button>
+            <button class="memory" onclick="memoryClear()">MC</button>
+            <button class="delete" onclick="clearHistory()">CH</button>
+        </div>
+        <div class="scientific">
+            <button onclick="appendFunction('sin(')">sin</button>
+            <button onclick="appendFunction('cos(')">cos</button>
+            <button onclick="appendFunction('tan(')">tan</button>
+            <button onclick="appendFunction('log10(')">log</button>
+            <button onclick="appendFunction('ln(')">ln</button>
+            <button onclick="appendFunction('sqrt(')">√</button>
+            <button onclick="appendFunction('factorial(')">n!</button>
+            <button onclick="appendToDisplay('i')">i</button>
+        </div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="delete" onclick="backspace()">⌫</button>
+            <button class="operator" onclick="appendToDisplay('(')">(</button>
+            <button class="operator" onclick="appendToDisplay(')')">)</button>
+            
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
+            
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+        </div>
+        <div class="history">
+            <h3>History</h3>
+            <div id="history-list"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

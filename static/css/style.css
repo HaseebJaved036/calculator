@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.calculator {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    width: 350px;
+    transition: all 0.3s ease;
+}
+
+.calculator.scientific-mode {
+    width: 500px;
+}
+
+.display {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#expression {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+#result {
+    font-size: 28px;
+    text-align: right;
+    min-height: 40px;
+    font-weight: bold;
+}
+
+.mode-toggle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.memory-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.scientific {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.scientific.visible {
+    display: grid;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+button {
+    width: 100%; /* Make all buttons fill their grid cell */
+    padding: 15px 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    min-height: 50px; /* Fixed height for buttons */
+}
+.delete {
+    background-color: #f39c12;
+    color: white;
+}
+.delete:hover {
+    background-color: #d68910;
+}
+.memory {
+    background-color: #9b59b6;
+    color: white;
+}
+.memory:hover {
+    background-color: #8e44ad;
+}
+.history {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.history h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 500;
+}
+#history-list {
+    font-size: 14px;
+    color: #34495e;
+}
+#history-list div {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+#history-list div:hover {
+    background-color: #fff;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
